@@ -39,15 +39,23 @@ public class MainActivity extends AppCompatActivity {
     private File photoFile;
     public String photoFileName = "photo.jpg";
 
+    private Button btnLogout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.nav_logo_whiteout);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         etDescription = findViewById(R.id.etDescription);
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
+
+        btnLogout = findViewById(R.id.btnLogout);
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +78,32 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
+                Toast.makeText(MainActivity.this, "Post saved successfully!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //ParseUser.logOut();
+                //ParseUser.getCurrentUser().
+                //ParseUser user = ParseUser.getCurrentUser(); // this will now be null
+                ParseUser.logOutInBackground(e -> {
+                    //progressDialog.dismiss();
+                    if (e == null)
+                        //showAlert("So, you're going...", "Ok...Bye-bye then");
+                        Toast.makeText(MainActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
+                        goLoginActivity();
+                });
+            }
+        });
+
+    }
+
+    private void goLoginActivity() {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void launchCamera() {
