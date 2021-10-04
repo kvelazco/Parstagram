@@ -2,16 +2,16 @@
 
 **Parstagram** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **10** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication.
-- [ ] User can log in and log out of his or her account.
+- [X] User can sign up to create a new account using Parse authentication.
+- [X] User can log in and log out of his or her account.
 - [X] The current signed in user is persisted across app restarts.
-- [ ] User can take a photo, add a caption, and post it to "Instagram".
+- [X] User can take a photo, add a caption, and post it to "Instagram".
 
 The following **optional** features are implemented:
 
@@ -27,13 +27,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/kvelazco/Parstagram/blob/master/walkthrough.gif' title='Video Walkthrough' width='250'/>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Not being too familiar with git yet, I lost uncommited files that I had to recode.
 
 ## Open-source libraries used
 
@@ -42,7 +42,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2021 Kevin velazco
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
